@@ -1,0 +1,1 @@
+{"name":"niva-milestone-one","version":"1.0.0","private":true,"type":"module","scripts":{"test":"node tests/model.test.mjs","start":"node server.mjs"}}

@@ -1,0 +1,6 @@
+export const fixture = Object.freeze({income:85000,balance:42800,buffer:7000,goalSaved:18000,goalTarget:30000,emergency:96000,emergencyTarget:150000,contribution:8000});
+export const commitments = Object.freeze([{name:'Rent',amount:18000,date:'05'},{name:'Electricity + utilities',amount:2400,date:'08'},{name:'Internet + mobile',amount:1200,date:'10'},{name:'Subscriptions',amount:1100,date:'11'},{name:'SIP',amount:4000,date:'12'}]);
+export const money = n => (n<0?'−':'')+'₹'+new Intl.NumberFormat('en-IN').format(Math.abs(n));
+export const total = commitments.reduce((sum,c)=>sum+c.amount,0);
+export function analyze(amount){const after=fixture.balance-total-amount;const gap=Math.max(0,fixture.buffer-after);return {amount,available:fixture.balance-amount,before:fixture.balance-total,after,gap,proposed:Math.max(0,fixture.contribution-gap),released:Math.min(gap,fixture.contribution),covered:after>=0};}
+export function transition(plan,event){if(event==='APPLY')return {...plan,state:'ADJUSTMENT_APPLIED',contribution:plan.proposed,date:plan.proposed===5100?'Nov 20':'Later than Nov 08',previous:{contribution:plan.contribution,date:plan.date}};if(event==='UNDO'&&plan.previous)return {...plan,...plan.previous,state:'ADJUSTMENT_UNDONE',previous:null};return {...plan,state:event};}

@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {analyze,total,transition,fixture} from '../dist/model.mjs';
+assert.equal(total,26700);const s=analyze(12000);
+assert.deepEqual(s,{amount:12000,available:30800,before:16100,after:4100,gap:2900,proposed:5100,released:2900,covered:true});
+const initial={state:'INITIAL',contribution:8000,date:'Nov 08',previous:null,proposed:5100};
+const preview=transition(initial,'ADJUSTMENT_PREVIEW');assert.equal(preview.contribution,8000);
+const applied=transition(preview,'APPLY');assert.equal(applied.contribution,5100);assert.equal(applied.date,'Nov 20');
+const undone=transition(applied,'UNDO');assert.equal(undone.contribution,8000);assert.equal(undone.date,'Nov 08');
+assert.equal(fixture.balance,42800);assert.equal(analyze(20000).covered,false);assert.equal(analyze(20000).proposed,0);
+assert.equal(analyze(5000).gap,0);assert.equal(analyze(5000).proposed,8000);
+console.log('PASS: deterministic arithmetic, preview isolation, apply, undo, unchanged balance and boundary scenarios.');
