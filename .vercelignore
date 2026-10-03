@@ -1,0 +1,11 @@
+.git
+.openai
+*.jpg
+*-milestone*.mjs
+refine-*.mjs
+integrate-*.mjs
+add-months-account.mjs
+redesign-calendar-profile.mjs
+compact-calendar.mjs
+validate-contribution.mjs
+fix.mjs

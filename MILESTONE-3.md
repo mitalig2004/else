@@ -1,0 +1,26 @@
+# ELSE — Milestone 3
+
+Implemented and tested locally on October 3, 2026. Nothing was deployed or published.
+
+1. **Branding:** All rendered routes use ELSE and the lowercase `else.` wordmark. Existing plan storage keys remain compatible with Milestone 2.
+2. **Landing:** Complete hero and purchase-ripple composition, balance separation, signature scenario, three-step explanation, shared-goal story, trust statements, final CTA and footer. Section navigation scrolls to the relevant content.
+3. **Login/signup:** Local mock forms with email/password validation, demo bypass and an honest forgot-password explanation. Passwords are never stored. Signup enters setup; login enters the demo home.
+4. **Onboarding:** Three illustrated steps cover available money, commitments and protected preferences. The original consistent financial fixture is retained; commitment edits are explicitly exploratory.
+5. **Collaboration:** Seeded Aanya/Rohan Goa goal, contributor totals, shared notes and activity. Manage dialog supports simulated invite, acceptance, withdrawal/removal and view/contribute permissions. Contributor records update goal savings only, with whole-rupee validation and an explicit no-payment explanation.
+6. **Privacy:** Collaborator rendering receives an explicit goal-data allowlist. It excludes salary, balance, transactions, commitments, emergency fund, buffer and personal scenarios. View-only access has no edit/contribution controls; pending and removed access hide goal data. This is a client-side demonstration, not production authorization.
+7. **Illustrations:** Nine original SVG compositions: phone, coffee, suitcase, wallet, receipt, ripple, person, shared goal and paths. A common outline and decorative accent palette keep them consistent.
+8. **Motion:** Finite hero entrances, staged ripple details, once-only scroll reveals, page entrances and subtle button hover/press responses. No endless ornamental animation.
+9. **Typography:** Plus Jakarta Sans display type and Inter for UI/data, with system fallbacks and tabular numerals.
+10. **Components:** Asymmetric primary buttons, rounded secondary buttons, trailing arrow circles, consistent inputs, collaborator badges, contribution rows and activity lists.
+11. **Spacing/layout:** Shared spacing and radius tokens, calmer desktop sections and tighter mobile layouts. Financial data remains visually distinct from decorative illustrations.
+12. **Desktop:** Checked at 1024, 1280, 1440 and 1600px. Hero and marketing sections use intentional multi-column compositions; product screens retain their existing data hierarchy.
+13. **Mobile/tablet:** Checked at 375, 390, 430 and 768px. Landing stacks with CTAs before the illustration, product navigation stays reachable, and dialogs become bottom sheets with safe-area padding.
+14. **Accessibility:** Labelled controls, native validation, descriptive progress indicators, decorative SVGs hidden from assistive technology, skip link, route-heading focus, dialog labelling, explicit Tab/Shift+Tab wrapping, Escape dismissal and opener-focus restoration. Invalid contribution errors are associated with the amount field.
+15. **Reduced motion:** The CSS media query disables animations, transitions and smooth scrolling, reveals content immediately and removes hover displacement. Scroll navigation checks the same preference. This was audited in code; OS-level preference switching was not automated.
+16. **Regression results:** `npm test` passes all three suites: core arithmetic/apply/undo, ecosystem filtering/totals/persistence and collaboration roles/privacy/currency validation. Browser checks covered 37 routes × 8 widths = 296 combinations with no document overflow, missing H1 or visible NIVA name. Mock login/signup, three setup steps, formatted `₹12,000` scenario input, invite acceptance, view-only access, note saving, removal and dialog focus were exercised. No browser errors appeared. The seeded ₹18,000 goal and accepted contributor state were restored.
+17. **Routes to inspect:** All routes use the existing hash router. Start at http://127.0.0.1:5173/#/ and inspect `#/login`, `#/signup`, `#/setup`, `#/home`, `#/purchase`, `#/scenario`, `#/preview`, `#/transactions`, `#/transactions/third-wave`, `#/goals`, `#/goals/goa`, `#/goals/goa/scenario`, `#/goals/emergency`, `#/shared/goa`, `#/recurring`, `#/recurring/review`, `#/recurring/netflix`, `#/insights` and `#/insights/category/food`. All nine transaction details, six recurring details and five category details were included in the responsive checks.
+18. **Compromises:** Authentication and invitations are local simulations; no account service, email, bank link or payment exists. Dates are illustrative estimates. A lower goal contribution reallocates a plan and does not close the cash buffer gap. Webfonts need network availability but have local fallbacks. Responsive DOM checks covered every route; visual review focused on representative landing, auth, onboarding, shared-goal, dialog and purchase screens. A production release would need server authorization and a full assistive-technology audit.
+
+## Start locally
+
+From this folder run `npm start`, then open http://127.0.0.1:5173/#/. The current localhost server was left running for review. Internal filenames remain compatible with the earlier NIVA prototype.

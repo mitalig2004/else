@@ -1,1 +1,1 @@
-{"name":"niva-milestone-one","version":"1.0.0","private":true,"type":"module","scripts":{"test":"node tests/model.test.mjs","start":"node server.mjs"}}
+{"name":"else-milestone-three","version":"3.0.0","private":true,"type":"module","scripts":{"test":"node tests/model.test.mjs && node tests/ecosystem.test.mjs && node tests/collaboration.test.mjs && node tests/months.test.mjs","start":"node server.mjs"}}

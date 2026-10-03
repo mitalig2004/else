@@ -1,4 +1,14 @@
-# NIVA · Milestone 1
+# ELSE — a product exploration by Mitali Giri
+
+ELSE is a responsive financial decision prototype with purchase scenarios, goals, recurring references, shared-goal permissions, a 12-month demo timeline, and local profile controls. It uses illustrative data; no bank connection, payment processing or production authentication is included.
+
+Run `npm start` to preview at http://127.0.0.1:5173 and `npm test` to run all four model suites. Vercel serves `dist` using the checked-in `vercel.json`; its build runs the tests. Hash routes work without server rewrites.
+
+Current routes: `/#/`, `/#/home`, `/#/transactions`, `/#/goals`, `/#/insights`, `/#/history`, `/#/profile`, `/#/login`, and `/#/signup`. See [MILESTONE-3.md](MILESTONE-3.md) and [MONTHS-ACCOUNT.md](MONTHS-ACCOUNT.md) for implementation details. The calendar now uses a compact anchored picker with dates and month selection.
+
+## Original milestone notes
+
+Milestone 2 is now implemented locally. See [MILESTONE-2.md](MILESTONE-2.md) for the current routes, shared plan persistence, model notes and verification report. The Milestone 1 details below document the original release; the accepted plan now persists across refresh. Milestone 2 has not been deployed.
 
 Run `npm start` and open http://127.0.0.1:5173. Run `npm test` for model checks. No dependencies or backend are required.
 
